@@ -40,8 +40,10 @@ if %w(rhel debian fedora).include?(node['platform_family'])
     conf true
     if node['apache']['version'] == '2.2'
       filename 'mod_pagespeed.so'
+      name 'mod_pagespeed'
     elsif node['apache']['version'] == '2.4'
       filename 'mod_pagespeed_ap24.so'
+      name 'mod_pagespeed_ap24'
     end
   end
 else

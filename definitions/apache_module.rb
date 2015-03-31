@@ -23,6 +23,7 @@ define :apache_module, :enable => true, :conf => false, :restart => false do
   params[:filename]    = params[:filename] || "mod_#{params[:name]}.so"
   params[:module_path] = params[:module_path] || "#{node['apache']['libexec_dir']}/#{params[:filename]}"
   params[:identifier]  = params[:identifier] || "#{params[:name]}_module"
+  params[:name]        = params[:name]
 
   apache_mod params[:name] if params[:conf]
 

@@ -22,7 +22,11 @@ describe 'apache2::mod_pagespeed' do
           expect(chef_run).to install_package('mod_pagespeed')
           expect(chef_run).to_not install_package('not_mod_pagespeed')
         end
-        it_should_behave_like 'an apache2 module', 'pagespeed', true
+        if property[:apache][:version] == '2.2'
+          it_should_behave_like 'an apache2 module', 'pagespeed', true
+        elsif property[:apache][:version] == '2.4'
+          it_should_behave_like 'an apache2 module', 'pagespeed_ap24', true
+        end
       end
     end
   end
