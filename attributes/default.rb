@@ -288,7 +288,7 @@ default['apache']['default_site_enabled'] = false
 default['apache']['default_site_port']    = '80'
 default['apache']['access_file_name'] = '.htaccess'
 default['apache']['default_release'] = nil
-default['apache']['service_test_timeout] = 10
+default['apache']['service_test_timeout'] = 10
 
 # Security
 default['apache']['servertokens']    = 'Prod'
