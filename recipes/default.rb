@@ -218,5 +218,6 @@ service 'apache2' do
   end
   supports [:start, :restart, :reload, :status]
   action [:enable, :start]
-  only_if "#{node['apache']['binary']} -t", :environment => { 'APACHE_LOG_DIR' => node['apache']['log_dir'] }, :timeout => node['apache']['service_test_timeout']
+  only_if "#{node['apache']['binary']} -t", :environment => { 'APACHE_LOG_DIR' => node['apache']['log_dir'] }
+  #only_if "#{node['apache']['binary']} -t", :environment => { 'APACHE_LOG_DIR' => node['apache']['log_dir'] }, :timeout => node['apache']['service_test_timeout']
 end
